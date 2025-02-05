@@ -25,7 +25,6 @@ No, I can't put up so many things this quickly while starting up from scratch, I
 - The back-end of the application uses [Node.js](https://nodejs.org/en) with [Express.js](https://expressjs.com/), paired with a [MongoDB](https://www.mongodb.com/) database paired with [Mongoose](https://mongoosejs.com/).
 ## Credits :
 I've worked alone on this project, if you have any request, question, suggestion, feedback, feel free to contact me using the [my email](mailto:theveneaucedricpro@gmail.com).
-Everything there is to know legal-wise about this project is written in the various "Legals" pages, available in the footer. But you can always ask me directly if needed.
 ## License and notice :
 There's no licensing on this piece of work.
 It must be noted that this project is not meant for commercial nor personnal use.
