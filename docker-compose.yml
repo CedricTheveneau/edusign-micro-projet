@@ -1,0 +1,100 @@
+services:
+  nextjs:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: nextjs
+    develop:
+      watch:
+        - path: ./front/
+          action: rebuild
+    ports:
+      - "3000:3000"
+    depends_on:
+      auth:
+        condition: service_healthy
+    env_file:
+      - ${NEXT_CONTAINER_ENV_FILE}
+  api-gateway:
+    build:
+      context: ./back/API_Gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    develop:
+      watch:
+        - path: ./back/API_Gateway/
+          target: /app/
+          action: sync
+        - path: ./back/API_Gateway/package.json
+          action: rebuild
+    env_file:
+      - ./back/API_Gateway/.env
+    depends_on:
+      auth:
+        condition: service_healthy
+      offers:
+        condition: service_started
+    ports:
+      - "8080:8080"
+  auth:
+    build:
+      context: ./back/Auth
+      dockerfile: Dockerfile
+    container_name: auth
+    develop:
+      watch:
+        - path: ./back/Auth/
+          target: /app/
+          action: sync
+        - path: ./back/Auth/package.json
+          action: rebuild
+    env_file:
+      - ./back/Auth/.env
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://auth:8081/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - authDb
+  offers:
+    build:
+      context: ./back/Offers
+      dockerfile: Dockerfile
+    container_name: offer
+    develop:
+      watch:
+        - path: ./back/Offers/
+          target: /app/
+          action: sync
+        - path: ./back/Offers/package.json
+          action: rebuild
+    env_file:
+      - ./back/Offers/.env
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://offer:8082/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - offerDb
+
+  authDb:
+    image: mongo:latest
+    container_name: authDb
+    volumes:
+      - db_data_auth:/data/db
+    ports:
+      - "27018:27017"
+  offerDb:
+    image: mongo:latest
+    container_name: offerDb
+    volumes:
+      - db_data_offer:/data/db
+    ports:
+      - "27019:27017"
+
+
+volumes:
+  db_data_auth:
+  db_data_offer:
