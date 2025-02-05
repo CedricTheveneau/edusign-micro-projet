@@ -1,0 +1,6 @@
+[submodule "front"]
+	path = front
+	url = https://github.com/CedricTheveneau/edusign-micro-projet-front.git
+[submodule "back"]
+	path = back
+	url = https://github.com/CedricTheveneau/edusign-micro-projet-back.git
