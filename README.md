@@ -1,12 +1,12 @@
 # Edusign - Micro-project | Version : V1.0.0 - POC
 Please note that this micro-project has been made for my job dating with Edusign. It implies various things : Figma design, NodeJS / MongoDB back-end, NextJS front-end.
-<!-- ## Badges
+## Badges
 ### Back
-[![DeepScan grade](https://deepscan.io/api/teams/23515/projects/27286/branches/870934/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23515&pid=27286&bid=870934)
-[![Known Vulnerabilities](https://snyk.io/test/github/CedricTheveneau/Voyage_Stoique-Back/badge.svg)](https://snyk.io/test/github/CedricTheveneau/Voyage_Stoique-Back)
+[![DeepScan grade](https://deepscan.io/api/teams/23515/projects/28806/branches/928337/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23515&pid=28806&bid=928337)
+[![Known Vulnerabilities](https://snyk.io/test/github/CedricTheveneau/edusign-micro-projet-back/badge.svg)](https://app.snyk.io/org/cedrictheveneau/project/ef6864d9-e7ad-45b6-91c1-234ad11e48ef)
 ### Front
-[![DeepScan grade](https://deepscan.io/api/teams/23515/projects/27287/branches/870938/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23515&pid=27287&bid=870938)
-[![Known Vulnerabilities](https://snyk.io/test/github/CedricTheveneau/Voyage_Stoique-Front/badge.svg)](https://snyk.io/test/github/CedricTheveneau/Voyage_Stoique-Front) -->
+[![DeepScan grade](https://deepscan.io/api/teams/23515/projects/28807/branches/928338/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=23515&pid=28807&bid=928338)
+[![Known Vulnerabilities](https://snyk.io/test/github/CedricTheveneau/edusign-micro-projet-front/badge.svg)](https://app.snyk.io/org/cedrictheveneau/project/e56a080f-34ee-440f-a4d7-a5d241633f2f)
 ## Summary
 [Edusign](https://edusign.com/fr/) is a SaaS platform meant to simplify and digitalize the management of students for teachers and school life for students.
 ## Description :
@@ -19,7 +19,7 @@ And here is the part of the project dedicated to the development itself. I'm doi
 - [X] Modern pill-shaped floating navbar
 - [ ] MAYBE routes to specific offers if I have time
 ## Was it done from scratch ?
-No, I can't put up so many things this quickly while starting up from scratch, I'll base most of my logic and code on Voyage Stoïque's code base to gain time.
+No, I can't put up so many things this quickly while starting up from scratch, I've based most of my logic and code on [Voyage Stoïque](https://github.com/CedricTheveneau/Voyage_Stoique)'s code base to gain time. Though, I took some time to improve upon it a bit and fixed some issues in the code. I only took what I needed though, so don't see it as a full-fledged app like Voyage Stoïque.
 ## Languages used :
 - The front-end of the application uses [NextJS](https://nextjs.org/) without TypeScript.
 - The back-end of the application uses [Node.js](https://nodejs.org/en) with [Express.js](https://expressjs.com/), paired with a [MongoDB](https://www.mongodb.com/) database paired with [Mongoose](https://mongoosejs.com/).
